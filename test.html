@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Manhattan Bar with Highcharts</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+<div id="container" style="height: 400px"></div>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column',
+        options3d: {
+            enabled: true,
+            alpha: 10,
+            beta: 25,
+            depth: 70
+        }
+    },
+    title: {
+        text: '3D Manhattan Bar Chart'
+    },
+    plotOptions: {
+        column: {
+            depth: 25
+        }
+    },
+    xAxis: {
+        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4']
+    },
+    yAxis: {
+        title: {
+            text: 'Values'
+        }
+    },
+    series: [{
+        name: 'Series 1',
+        data: [2, 3, 5, 7]
+    }, {
+        name: 'Series 2',
+        data: [3, 5, 1, 6]
+    }]
+});
+</script>
+</body>
+</html>
